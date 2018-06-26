@@ -1,0 +1,17 @@
+[Unit]
+AssertPathExists=/home/telegrambot/bots/quotebot
+
+[Service]
+WorkingDirectory=/home/telegrambot/bots/quotebot
+#Environment=GHOST_NODE_VERSION_CHECK=false
+ExecStart=/usr/bin/env python3 bot.py -c config/zaykax.ini
+Restart=always
+PrivateTmp=true
+NoNewPrivileges=true
+User=telegrambot
+Group=telegrambot
+
+[Install]
+WantedBy=default.target
+
+
