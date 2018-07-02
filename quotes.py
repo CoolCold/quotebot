@@ -22,20 +22,26 @@ def load(config):
     quote['lnumber']=int(qinfo[1])
     quote['channel']=qinfo[2]
     quote['text']=' '.join(tmp[1:])
+    quote['id']=copy.copy(c)
     quotes.append(copy.copy(quote))
     c=c+1
   return c>0 #true or false
 
 
 
-def getquote(id):
-  for quote in quotes:
-    if quote['number']==int(id):
-      return quote
+def getquote(number,isNumber=True):
+  if isNumber:
+    for quote in quotes:
+      if quote['number']==int(number):
+        return quote
+  else:
+    for quote in quotes:
+      if quote['id']==number:
+        return quote
   return {}
 
 def getrandomquote():
-  return getquote(random.randint(0,len(quotes))) #this is incorrect - TODO - as quotes may have holes, it's not monotonic array
+  return getquote(random.randint(0,len(quotes)),isNumber=False)
 
 def findquotes(text):
 #TODO - check for minimal length
