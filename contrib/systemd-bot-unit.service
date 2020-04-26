@@ -13,8 +13,9 @@ ExecStart=/usr/bin/env python3 bot.py -c config/zaykax.ini
 Restart=always
 PrivateTmp=true
 NoNewPrivileges=true
-User=telegrambot
-Group=telegrambot
+#User=telegrambot
+#Group=telegrambot
+StandardOutput=journal
 
 [Install]
 WantedBy=default.target
