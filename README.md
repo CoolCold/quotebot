@@ -11,7 +11,7 @@ Requires manual change of quotebot db to have
 ## Environment
 ### Debian 9
 #### System setup
-```sudo apt-get install python3 python3-pip python3-setuptools dbus```
+```sudo apt-get install python3 python3-pip python3-setuptools dbus libpam-systemd```
 #### to be run under dedicated user
 ```
 pip3 install wheel
