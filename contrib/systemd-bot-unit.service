@@ -4,7 +4,7 @@ AssertPathExists=/home/telegrambot/bots/quotebot
 
 [Service]
 WorkingDirectory=/home/telegrambot/bots/quotebot
-Environment=LC_ALL=C.UTF-8
+Environment=en_US.UTF-8
 ExecStart=/usr/bin/env python3 bot.py -c config/zaykax.ini
 Restart=always
 PrivateTmp=true
